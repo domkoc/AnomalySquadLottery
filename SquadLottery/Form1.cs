@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace SquadLottery
 {
@@ -15,20 +9,38 @@ namespace SquadLottery
         public Form1()
         {
             InitializeComponent();
-
-            // Sets up the initial objects in the CheckedListBox.
-            string[] names = { "Ágoston", "Andris", "Bence", "Botond", "Dominik", "Martin", "Peti" };
-            playerNamesCheckedListBox.Items.AddRange(names);
-
-            // Changes the selection mode from double-click to single click.
             playerNamesCheckedListBox.CheckOnClick = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LeaderLotteryButton_Click(object sender, EventArgs e)
         {
+            if (playerNamesCheckedListBox.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Select at least one name!");
+                return;
+            }
             Random random = new Random();
             int randomNameIdx = random.Next(playerNamesCheckedListBox.CheckedItems.Count);
             leaderNameLabel.Text = playerNamesCheckedListBox.CheckedItems[randomNameIdx].ToString();
+        }
+
+        private void RemoveNameButton_Click(object sender, EventArgs e)
+        {
+            if (playerNamesCheckedListBox.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Select at least one name!");
+                return;
+            }
+            for (int i = 0; i < playerNamesCheckedListBox.CheckedItems.Count; i++)
+            {
+                playerNamesCheckedListBox.Items.Remove(playerNamesCheckedListBox.CheckedItems[i]);
+            }
+        }
+
+        private void AddNameButton_Click(object sender, EventArgs e)
+        {
+            string newName = Interaction.InputBox("Enter the new name", "Name to add");
+            playerNamesCheckedListBox.Items.Add(newName);
         }
     }
 }

@@ -32,6 +32,8 @@
             this.leaderNameLabel = new System.Windows.Forms.Label();
             this.LeaderLotteryButton = new System.Windows.Forms.Button();
             this.leaderTitleLabel = new System.Windows.Forms.Label();
+            this.AddNameButton = new System.Windows.Forms.Button();
+            this.RemoveNameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // playerNamesCheckedListBox
@@ -45,36 +47,60 @@
             // leaderNameLabel
             // 
             this.leaderNameLabel.AutoSize = true;
-            this.leaderNameLabel.Location = new System.Drawing.Point(166, 169);
+            this.leaderNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.leaderNameLabel.Location = new System.Drawing.Point(276, 79);
             this.leaderNameLabel.Name = "leaderNameLabel";
-            this.leaderNameLabel.Size = new System.Drawing.Size(104, 13);
+            this.leaderNameLabel.Size = new System.Drawing.Size(231, 26);
             this.leaderNameLabel.TabIndex = 1;
             this.leaderNameLabel.Text = "Press the Go button!";
             // 
             // LeaderLotteryButton
             // 
-            this.LeaderLotteryButton.Location = new System.Drawing.Point(15, 185);
+            this.LeaderLotteryButton.Location = new System.Drawing.Point(276, 172);
             this.LeaderLotteryButton.Name = "LeaderLotteryButton";
-            this.LeaderLotteryButton.Size = new System.Drawing.Size(255, 23);
+            this.LeaderLotteryButton.Size = new System.Drawing.Size(231, 23);
             this.LeaderLotteryButton.TabIndex = 2;
             this.LeaderLotteryButton.Text = "Go";
             this.LeaderLotteryButton.UseVisualStyleBackColor = true;
-            this.LeaderLotteryButton.Click += new System.EventHandler(this.button1_Click);
+            this.LeaderLotteryButton.Click += new System.EventHandler(this.LeaderLotteryButton_Click);
             // 
             // leaderTitleLabel
             // 
             this.leaderTitleLabel.AutoSize = true;
-            this.leaderTitleLabel.Location = new System.Drawing.Point(12, 169);
+            this.leaderTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.leaderTitleLabel.Location = new System.Drawing.Point(273, 12);
             this.leaderTitleLabel.Name = "leaderTitleLabel";
             this.leaderTitleLabel.Size = new System.Drawing.Size(148, 13);
             this.leaderTitleLabel.TabIndex = 3;
             this.leaderTitleLabel.Text = "The next squad leader will be:";
             // 
+            // AddNameButton
+            // 
+            this.AddNameButton.Location = new System.Drawing.Point(12, 172);
+            this.AddNameButton.Name = "AddNameButton";
+            this.AddNameButton.Size = new System.Drawing.Size(131, 23);
+            this.AddNameButton.TabIndex = 4;
+            this.AddNameButton.Text = "Add New";
+            this.AddNameButton.UseVisualStyleBackColor = true;
+            this.AddNameButton.Click += new System.EventHandler(this.AddNameButton_Click);
+            // 
+            // RemoveNameButton
+            // 
+            this.RemoveNameButton.Location = new System.Drawing.Point(149, 172);
+            this.RemoveNameButton.Name = "RemoveNameButton";
+            this.RemoveNameButton.Size = new System.Drawing.Size(121, 23);
+            this.RemoveNameButton.TabIndex = 4;
+            this.RemoveNameButton.Text = "Remove Selected";
+            this.RemoveNameButton.UseVisualStyleBackColor = true;
+            this.RemoveNameButton.Click += new System.EventHandler(this.RemoveNameButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 213);
+            this.ClientSize = new System.Drawing.Size(523, 203);
+            this.Controls.Add(this.RemoveNameButton);
+            this.Controls.Add(this.AddNameButton);
             this.Controls.Add(this.leaderTitleLabel);
             this.Controls.Add(this.LeaderLotteryButton);
             this.Controls.Add(this.leaderNameLabel);
@@ -92,6 +118,8 @@
         private System.Windows.Forms.Label leaderNameLabel;
         private System.Windows.Forms.Button LeaderLotteryButton;
         private System.Windows.Forms.Label leaderTitleLabel;
+        private System.Windows.Forms.Button AddNameButton;
+        private System.Windows.Forms.Button RemoveNameButton;
     }
 }
 
